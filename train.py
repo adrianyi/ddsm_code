@@ -39,7 +39,7 @@ flags.DEFINE_string("data_dir",
                         dataset_name = "sjay87/", #all mounted repo
                         local_root = ROOT_PATH_TO_LOCAL_DATA,
                         local_repo = "",
-                        path = ''
+                        path = ""
                     ),
                     "Path to dataset. It is recommended to use get_data_path()"
                     "to define your data directory.so that you can switch "
@@ -55,7 +55,8 @@ flags.DEFINE_string("log_dir",
                     "If you set your logs directory manually make sure"
                     "to use /logs/ when running on ClusterOne cloud.")
 
-flags.DEFINE_integer("n_training_samples", 44712,
+n_files = len([f for f in os.listdir(flags.FLAGS.data_dir) if f[-9:]=='tfrecords'])
+flags.DEFINE_integer("n_training_samples", 11178*(n_files-1),
                      "Number of training samples")
 flags.DEFINE_integer("n_test_samples", 11178,
                      "Number of test samples")
