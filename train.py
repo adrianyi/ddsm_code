@@ -61,7 +61,7 @@ flags.DEFINE_integer("n_training_samples", 11178*(n_files-1),
 flags.DEFINE_integer("n_test_samples", 11178,
                      "Number of test samples")
 
-flags.DEFINE_integer("logging_period", 1,
+flags.DEFINE_integer("logging_period", 10,
                      "Number of iterations between each logging")
 
 # You can change below numbers.
@@ -78,7 +78,7 @@ flags.DEFINE_integer("initial_kernel_size", 5,
 flags.DEFINE_float("learning_rate", 0.01, "Learning rate")
 flags.DEFINE_integer("batch_size", 128, "Batch size")
 flags.DEFINE_integer("validation_size", 2048, "Number of samples to use for validation")
-flags.DEFINE_integer("epochs", 1000, "Number of epochs")
+flags.DEFINE_integer("epochs", 50, "Number of epochs")
 flags.DEFINE_float("dropout", 0.3, "Dropout probability")
 
 FLAGS = flags.FLAGS
